@@ -14,7 +14,7 @@ for i in r["parks"]:
             tmpCoordX = j["geometry"]["coordinates"][1]
     percent = i["parkInformation"]["free"] / i["parkInformation"]["max"] * 100
     revertPercent = 100 - percent
-    if percent <= 10:
+    if percent <= 10 or i["parkInformation"]["free"] <= 20:
         color = "orange"
     else:
         color = "green"
